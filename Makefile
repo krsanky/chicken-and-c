@@ -1,4 +1,4 @@
-CSC=		/usr/local/bin/csc5
+CSC=	/usr/local/bin/chicken-csc
 #CSCFLAGS+=	-static -L
 
 all: c1 
