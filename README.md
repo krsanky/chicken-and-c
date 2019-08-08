@@ -2,11 +2,11 @@
 
 Talk between chicken code and c code.  
 
-Makefile doesnt work yet, but below does
+Makefile doesn't work yet, but below does
 ~~~
 
 cc -c ccode.c
-csc5 ccode.o c1.scm
+chicken-csc ccode.o c1.scm
 
 
 ~~~
