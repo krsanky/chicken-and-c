@@ -3,8 +3,10 @@ CSC=	/usr/local/bin/chicken-csc
 
 all: c1 
 
-c1: $@.o 
-	${CSC} ${CSCFLAGS} $@.o -o $@
+#c1: $@.o ccode.o
+c1: ccode.o
+	#${CSC} ${CSCFLAGS} $@.o -o $@
+	$(CSC) -static ccode.o $@.scm
 
 foo: $@.o bar.o 
 	${CSC} $@.o bar.o -o $@
