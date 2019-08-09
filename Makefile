@@ -1,14 +1,16 @@
-CSC=	/usr/local/bin/chicken-csc
+CSC=		/usr/local/bin/chicken-csc
+CSCFLAGS+=
+#CSCFLAGS+=	-static 
 #CSCFLAGS+=	-static -L
 
 all: c1 
 
 read-tags: $@.scm
-	$(CSC) $@.scm
+	$(CSC) $(CSCFLAGS) $@.scm
 
 #c1: $@.o ccode.o
 c1: ccode.o $@.scm
-	$(CSC) -static ccode.o $@.scm
+	$(CSC) $(CSCFLAGS) ccode.o $@.scm
 
 foo: $@.o bar.o 
 	${CSC} $@.o bar.o -o $@
