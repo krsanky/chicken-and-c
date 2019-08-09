@@ -6,7 +6,7 @@ Makefile doesn't work yet, but below does
 ~~~
 
 cc -c ccode.c
-chicken-csc ccode.o c1.scm
+chicken-csc [-static] ccode.o c1.scm
 
 
 ~~~

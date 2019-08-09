@@ -12,3 +12,13 @@ export CHICKEN_REPOSITORY_PATH
 #chicken-install  -repository                                            
 #/home/wise/CHICKEN/chicken
 
+
+
+
+#CSC_OPTIONS='-I/usr/pkg/include/mysql -L/usr/pkg/lib/mysql -L -R/usr/pkg/lib/mysql' 
+#CHICKEN_C_INCLUDE_PATH and CHICKEN_C_LIBRARY_PATH can also be used
+#to override include- and linker-paths.  Each of these variables
+#may contain one or more
+export CHICKEN_C_INCLUDE_PATH="/usr/local/include"
+export CHICKEN_C_LIBRARY_PATH="/usr/local/lib"
+
