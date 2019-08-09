@@ -4,7 +4,7 @@ CSC=	/usr/local/bin/chicken-csc
 all: c1 
 
 read-tags: $@.scm
-	$(CSC) $@
+	$(CSC) $@.scm
 
 #c1: $@.o ccode.o
 c1: ccode.o $@.scm
