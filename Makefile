@@ -4,8 +4,7 @@ CSC=	/usr/local/bin/chicken-csc
 all: c1 
 
 #c1: $@.o ccode.o
-c1: ccode.o
-	#${CSC} ${CSCFLAGS} $@.o -o $@
+c1: ccode.o $@.scm
 	$(CSC) -static ccode.o $@.scm
 
 foo: $@.o bar.o 
@@ -20,9 +19,4 @@ clean:
 	rm -f c1
 
 .PHONY: clean all
-
-#Makefile doesn't work yet, but below does
-#
-#cc -c ccode.c
-#chicken-csc [-static] ccode.o c1.scm
 
