@@ -11,6 +11,9 @@ read-tags: $@.scm
 simple-cgi: $@.scm
 	$(CSC) $(CSCFLAGS) $@.scm
 
+deploy-cgi:
+	echo deploy cgi ...
+
 #c1: $@.o ccode.o
 c1: ccode.o $@.scm
 	$(CSC) $(CSCFLAGS) ccode.o $@.scm
@@ -26,5 +29,5 @@ clean:
 	rm -f *.o *.so *.link *.import.scm *.out
 	rm -f c1 read-tags
 
-.PHONY: clean all
+.PHONY: clean all deploy-cgi
 
