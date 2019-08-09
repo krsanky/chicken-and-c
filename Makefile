@@ -8,6 +8,9 @@ all: c1
 read-tags: $@.scm
 	$(CSC) $(CSCFLAGS) $@.scm
 
+simple-cgi: $@.scm
+	$(CSC) $(CSCFLAGS) $@.scm
+
 #c1: $@.o ccode.o
 c1: ccode.o $@.scm
 	$(CSC) $(CSCFLAGS) ccode.o $@.scm
