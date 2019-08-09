@@ -3,6 +3,9 @@ CSC=	/usr/local/bin/chicken-csc
 
 all: c1 
 
+read-tags: $@.scm
+	$(CSC) $@
+
 #c1: $@.o ccode.o
 c1: ccode.o $@.scm
 	$(CSC) -static ccode.o $@.scm
@@ -16,7 +19,7 @@ foo: $@.o bar.o
 
 clean:
 	rm -f *.o *.so *.link *.import.scm *.out
-	rm -f c1
+	rm -f c1 read-tags
 
 .PHONY: clean all
 
