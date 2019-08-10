@@ -1,6 +1,6 @@
 CSC=		/usr/local/bin/chicken-csc
-CSCFLAGS+=
-#CSCFLAGS+=	-static 
+#CSCFLAGS+=
+CSCFLAGS+= -static -J
 #CSCFLAGS+=	-static -L
 
 all: c1 
@@ -11,8 +11,8 @@ read-tags: $@.scm
 simple-cgi: $@.scm
 	$(CSC) $(CSCFLAGS) $@.scm
 
-deploy-cgi:
-	echo deploy cgi ...
+deploy-cgi: simple-cgi
+	cp simple-cgi /var/www/htdocs/simple-cgi.cgi
 
 #c1: $@.o ccode.o
 c1: ccode.o $@.scm
@@ -27,7 +27,7 @@ foo: $@.o bar.o
 
 clean:
 	rm -f *.o *.so *.link *.import.scm *.out
-	rm -f c1 read-tags
+	rm -f c1 read-tags simple-cgi
 
-.PHONY: clean all deploy-cgi
+.PHONY: clean all deploy-cgi 
 
